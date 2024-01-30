@@ -21,8 +21,8 @@ public class p1_30 {
 
     public static void main(String[] args) {
         String A = "abcd";
-        String B = "efgh";
-        String C = "ijkl";
+        String B = "afgh";
+        String C = "ijal";
         System.out.println(LCSof3(A, B, C, 4, 4, 4));
     }
 }
