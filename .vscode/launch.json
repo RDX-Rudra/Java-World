@@ -1,0 +1,28 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "DemoApplication",
+            "request": "launch",
+            "mainClass": "SpringBoot.demo.src.main.java.com.example.demo.DemoApplication",
+            "projectName": "javaFiles_6cd5571c"
+        },
+        {
+            "type": "java",
+            "name": "DemoApplication",
+            "request": "launch",
+            "mainClass": "demo.src.main.java.com.example.demo.DemoApplication",
+            "projectName": "javaFiles_6cd5571c"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-HelloApplication<hello>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.rdxrudra.hello.HelloApplication",
+            "projectName": "hello",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
