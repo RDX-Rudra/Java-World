@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "QuizappApplication",
+            "request": "launch",
+            "mainClass": "com.rdx.quizapp.QuizappApplication",
+            "projectName": "quizapp"
+        },
+        {
+            "type": "java",
             "name": "DemoApplication",
             "request": "launch",
             "mainClass": "SpringBoot.demo.src.main.java.com.example.demo.DemoApplication",
