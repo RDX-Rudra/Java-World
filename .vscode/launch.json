@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "P22_3",
+            "request": "launch",
+            "mainClass": "P22_3",
+            "projectName": "javaFiles_6cd5571c"
+        },
+        {
+            "type": "java",
             "name": "QuizappApplication",
             "request": "launch",
             "mainClass": "com.rdx.quizapp.QuizappApplication",
