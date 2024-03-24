@@ -27,6 +27,7 @@ public class doublyLL {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the value: ");
         String data = sc.next();
+        sc.close();
         Node newNode = new Node(data);
         newNode.prev = null;
         if(head == null){
@@ -43,6 +44,7 @@ public class doublyLL {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the position: ");
         int Position = sc.nextInt();
+        sc.close();
         if(Position == 1 || head == null){
             addFirst();
             return;
@@ -68,6 +70,7 @@ public class doublyLL {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the value: ");
         String data = sc.next();
+        sc.close();
         Node newNode = new Node(data);
         if(head == null){
             head = newNode;
@@ -196,6 +199,7 @@ public class doublyLL {
                     break;
                 case 10:
                     System.exit(operation);
+                    sc.close();
                 default:
                     System.out.println("enter a valid operation");
                     break;

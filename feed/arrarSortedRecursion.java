@@ -15,5 +15,6 @@ public class arrarSortedRecursion{
         Scanner sc = new Scanner(System.in);
         int arr[] = {1,3,5,4,6};
         System.out.println(isSorted(arr, 0));
+        sc.close();
     }
 }

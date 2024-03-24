@@ -17,5 +17,6 @@ public class BacktrackingPermutation{
         Scanner sc = new Scanner(System.in);
         String str = sc.nextLine();
         printPerm(str, 0, "");
+        sc.close();
     }
 }

@@ -16,5 +16,6 @@ public class AvarageF {
         int z = sc.nextInt();
         int avg = calAvg(x,y,z);
         System.out.println("avarage of three number is : "+ avg);
+        sc.close();
     }
 }

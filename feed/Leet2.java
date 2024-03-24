@@ -1,4 +1,3 @@
-public class Leet2 {
     //{ Driver Code Starts
 //Initial Template for Java
 
@@ -18,7 +17,7 @@ class Node{
     }
 }
 
-class GFG {
+public class Leet2 {
     
     static Node buildTree(String str){
         
@@ -160,4 +159,4 @@ String solve(Node root){
     return ans;
     }
 }
-}
+
