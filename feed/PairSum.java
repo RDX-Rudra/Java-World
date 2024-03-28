@@ -5,9 +5,9 @@ public class PairSum {
     public static boolean pairExist(int[] arr, int k){
         HashSet<Integer> num = new HashSet<>();
         for(int val: arr){
-            num.add(val);
             if(num.contains(k-val))
                 return true;
+            num.add(val);
         }
         return false;
     }
