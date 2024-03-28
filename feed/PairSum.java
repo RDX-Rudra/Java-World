@@ -14,7 +14,7 @@ public class PairSum {
 
     public static void main(String[] args) {
         int[] arr = {8, 9, 1, -2, 4, 5, 11, -6, 7, 5};
-        int k = 11;
+        int k = -6;
         System.out.println(pairExist(arr, k));
     }
 }
