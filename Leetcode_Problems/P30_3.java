@@ -25,4 +25,5 @@ public class P30_3 {
         int k = 2;
         System.out.println(subarraysWithKDistinct(nums, k)); // Output: 7
     }
+    
 }
