@@ -1,31 +1,29 @@
 public class P31_3_2444 {
     public static long countSubarrays(int[] nums, int minK, int maxK) {
-        int left=0, right=0;
-        long ans = 0;
-        boolean findmin = false, findmax = false;
-        while (right <nums.length) {
-            if(nums[right]<=maxK && nums[right]>=minK){
-                if(nums[right] == minK)
-                    findmin = true;
-                if(nums[right] == maxK)
-                    findmax = true;
-                if(findmax == true && findmin == true){
-                    ans ++;
-                }
-                right++;
+        long res = 0;
+        int badIdx = -1, leftIdx = -1, rightIdx = -1;
+
+        for (int i = 0; i < nums.length; ++i) {
+            if (!(minK <= nums[i] && nums[i] <= maxK)) {
+                badIdx = i;
             }
-            else{
-                right++;
-                left = right;
-                findmax = false;
-                findmin = false;
+
+            if (nums[i] == minK) {
+                leftIdx = i;
             }
+
+            if (nums[i] == maxK) {
+                rightIdx = i;
+            }
+
+            res += Math.max(0, Math.min(leftIdx, rightIdx) - badIdx);
         }
-        return ans;
+
+        return res;
     }
     public static void main(String[] args) {
-        int[] nums = {1,1,1,1};
-        int minK = 1, maxK = 1;
+        int[] nums = {1,3,5,2,7,5};
+        int minK = 1, maxK = 5;
         System.out.println(countSubarrays(nums, minK, maxK));
     }
 }
