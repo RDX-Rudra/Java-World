@@ -2,7 +2,6 @@ import java.util.Stack;
 
 public class P4_4_1614 {
     public static int maxDepth(String s) {
-        Stack<Character> store = new Stack<>();
         int maxdept = Integer.MIN_VALUE;
         int count = 0;
         for(int i=0; i<s.length(); i++){
@@ -18,7 +17,7 @@ public class P4_4_1614 {
             else
                 continue;
         }
-        return maxdept;
+        return Math.max(maxdept, count);
     }
 
     public static void main(String[] args) {
