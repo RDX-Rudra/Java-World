@@ -6,12 +6,10 @@ public class P4_4_1614 {
         int count = 0;
         for(int i=0; i<s.length(); i++){
             if(s.charAt(i)=='('){
-                store.push(s.charAt(i));
                 count++;
                 maxdept = Math.max(maxdept, count);
             }
             else if(s.charAt(i)==')'){
-                store.pop();
                 count--;
             }
             else
