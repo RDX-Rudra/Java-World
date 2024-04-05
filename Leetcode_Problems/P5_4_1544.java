@@ -1,5 +1,6 @@
+import java.util.*;
 public class P5_4_1544 {
-    public static String makeGood(String s){
+    public static String makeGood(String s) {
         Stack<Character> stack = new Stack<>();
         
         for (char c : s.toCharArray()) {
