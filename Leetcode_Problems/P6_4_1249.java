@@ -1,33 +1,54 @@
 import java.util.Stack;
 
 public class P6_4_1249 {
+    
     public static String minRemoveToMakeValid(String s) {
-        Stack<Character> store = new Stack<>();
+        // Initialize pointers for the start and end of the string
+        int startPointer = 0;
+        int endPointer = s.length() - 1;
+
+        String result;
+
+        // Convert input string to character array for easier manipulation
         char[] arr = s.toCharArray();
-        for(int i=0; i<arr.length; i++){
-            if(arr[i] == '(')
-                store.push(arr[i]);
-            if(arr[i] == ')'){
-                if(!store.isEmpty()){
-                    store.pop();
-                }
-                else{
-                    arr[i] = ' ';
-                }
+        
+        // Counter for open parentheses
+        int openParenthesesCount = 0;
+
+        // First pass: mark excess closing parentheses with '*'
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == '(')
+                openParenthesesCount++;
+            else if (arr[i] == ')') {
+                if (openParenthesesCount == 0)
+                    arr[i] = '*'; // Mark excess closing parentheses
+                else
+                    openParenthesesCount--;
             }
         }
-        while()
-        StringBuilder result = new StringBuilder();
-        for(char c : arr){
-            if(c == ' ')
-                continue;
-            else
-                result.append(c);
+
+        // Second pass: mark excess opening parentheses from the end
+        for (int i = arr.length - 1; i >= 0; i--) {
+            if (openParenthesesCount > 0 && arr[i] == '(') {
+                arr[i] = '*'; // Mark excess opening parentheses
+                openParenthesesCount--;
+            }
         }
-        return result.toString();
+        
+        // Filter out marked characters and store the result in the character array
+        int p = 0; // Pointer for updating the character array
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] != '*')
+                arr[p++] = arr[i];
+        }
+
+        // Construct the result string from the filtered character array
+        result = new String(arr).substring(0, p);
+
+        return result;
     }
     public static void main(String[] args) {
-        String s = "lee(t(c)o)de)";
+        String s = "())()(((";
         System.out.println(minRemoveToMakeValid(s));
     }
 }
