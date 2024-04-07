@@ -2,36 +2,35 @@ import java.util.Stack;
 
 public class P7_4_678 {
     public static boolean checkValidString(String s) {
-        Stack<Character> stack = new Stack<>();
-        int stars = 0;
-        for(char c : s.toCharArray()){
-            if(c== '(')
-                stack.push(c);
-            else if(c== '*'){
-                
-                stars++;
-            }
-            else if(c == ')'){
-                if(!stack.isEmpty())
-                    stack.pop();
-                else if(stars >0 && stack.isEmpty())
-                    stars--;
+        Stack<Integer> leftStack = new Stack<>();
+        Stack<Integer> starStack = new Stack<>();
+
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (c == '(')
+                leftStack.push(i);
+            else if (c == '*')
+                starStack.push(i);
+            else {
+                if (!leftStack.isEmpty())
+                    leftStack.pop();
+                else if (!starStack.isEmpty())
+                    starStack.pop();
                 else
                     return false;
             }
-            else
-                continue;
         }
-        while(!stack.isEmpty()){
-            if(stars>0)
-                stars--;
-            else
+
+        while (!leftStack.isEmpty() && !starStack.isEmpty()) {
+            if (leftStack.pop() > starStack.pop())
                 return false;
         }
-        return true;
+
+        return leftStack.isEmpty();
     }
+
     public static void main(String[] args) {
-        String s = "((((()(()()()*()(((((*)()*(**(())))))(())()())(((())())())))))))(((((())*)))()))(()((*()*(*)))(*)()";
+        String s = "(((((*(()((((*((**(((()()*)()()()*((((**)())*)*)))))))(())(()))())((*()()(((()((()*(())*(()**)()(())";
         System.out.println(checkValidString(s));
     }
 }
