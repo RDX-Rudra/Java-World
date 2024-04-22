@@ -1,5 +1,3 @@
-package TicTacToe;
-
 public class Playerx {
     char sign;
     String name;
