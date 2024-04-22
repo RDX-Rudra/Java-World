@@ -1,9 +1,10 @@
 package TicTacToe;
-public class player{
+
+public class Playerx {
     char sign;
     String name;
 
-    public player(char sign){
+    public Playerx(char sign) {
         this.sign = sign;
         this.name = "player" + sign;
     }
