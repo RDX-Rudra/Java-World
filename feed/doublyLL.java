@@ -6,7 +6,7 @@ public class doublyLL {
     Node head;
     Node tail;
     private int size;
-    LL(){
+    void LL(){
         this.size = 0;
     }
     class Node{
