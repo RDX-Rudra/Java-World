@@ -19,7 +19,8 @@ public class Mainx {
         }
         boolean gameOver = false;
         Playerx player = player1;
-        while(!gameOver){
+        int count = 1;
+        while(!gameOver && count<10){
             printBoard(board);
             System.out.print(player.name + " enter your position- ");
             String store = sc.nextLine();
@@ -32,11 +33,19 @@ public class Mainx {
                     System.out.println(player.name + " won the match");
                     gameOver = true;
                 }
+                else{
+                    count++;
+                    player = (player == player1)? player2 : player1;
+                }
             }
             else{
                 System.out.println("wrong input");
             }
-            player = (player == player1)? player2 : player1;
+            
+        }
+        if(count == 10){
+            printBoard(board);
+            System.out.println("!!!!Match Draw!!!!");
         }
         sc.close();
     }
@@ -84,7 +93,7 @@ public class Mainx {
 
     public static void printBoard(char[][] board) {
         System.out.println("  0 1 2");
-        System.out.println("-------");
+        System.out.println("--------");
         for (int i = 0; i < board.length; i++) {
             System.out.print(i);
             System.out.print("|");
@@ -92,7 +101,7 @@ public class Mainx {
                 System.out.print(board[i][j] + "|");
             }
             System.out.println();
-            System.out.println("-------");
+            System.out.println("--------");
         }
     }
 }
