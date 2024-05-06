@@ -1,4 +1,4 @@
-import java.util.Stack;
+import java.utill.ListNode;
 
 public class Pp6_5_2487 {
     public static ListNode removeNodes(ListNode head) {
@@ -19,18 +19,18 @@ public class Pp6_5_2487 {
             nxt = cur;
         }
 
-        return cur;
+        return nxt; // return nxt instead of cur
     }
 
     public static void main(String[] args) {
-        ListNode a = new ListNode(0);
-        a.val = 5;
-        a.next.val = 2;
-        a.next.next.val = 13;
-        a.next.next.next.val = 3;
-        a.next.next.next.next.val = 8;
+        ListNode a = new ListNode(5);
+        a.next.next = new ListNode(2);
+        a.next.next.next = new ListNode(13);
+        a.next.next.next.next = new ListNode(3);
+        a.next.next.next.next.next = new ListNode(8);
+
         ListNode ans = removeNodes(a);
-        while(ans.next !=null){
+        while (ans != null) { // Change the condition to ans != null
             System.out.println(ans.val);
             ans = ans.next;
         }
