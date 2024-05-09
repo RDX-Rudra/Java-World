@@ -25,7 +25,7 @@ public class Doctor {
                 int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");
                 String specialization = resultSet.getString("specialization");
-                System.out.printf("|%-4s|%-2s|%-18s|\n", id, name, specialization);
+                System.out.printf("|%-4s|%-21s|%-18s|\n", id, name, specialization);
                 System.out.println("+----+---------------------+------------------+");
             }
 

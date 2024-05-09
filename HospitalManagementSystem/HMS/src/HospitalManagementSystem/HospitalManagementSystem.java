@@ -131,16 +131,16 @@ public class HospitalManagementSystem {
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             ResultSet resultSet = preparedStatement.executeQuery();
             System.out.println("appointments: ");
-            System.out.println("+----+---------------+--------------+--------+");
-            System.out.println("| id | patient's id  |  Doctor's id | date |");
-            System.out.println("+----+---------------+--------------+--------+");
+            System.out.println("+----+---------------+--------------+----------+");
+            System.out.println("| id | patient's id  |  Doctor's id |  date   |");
+            System.out.println("+----+---------------+--------------+----------+");
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
                 int patientId = resultSet.getInt("patient_id");
                 int doctorId = resultSet.getInt("doctort_id");
                 String date = resultSet.getString("appointment_date");
-                System.out.printf("|%-4s|%-15s|%-14s|%-8s|\n", id, patientId, doctorId, date);
-                System.out.println("+----+---------------+--------------+--------+");
+                System.out.printf("|%-4s|%-15s|%-14s|%-10s|\n", id, patientId, doctorId, date);
+                System.out.println("+----+---------------+--------------+----------+");
 
             }
 
