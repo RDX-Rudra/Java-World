@@ -1,4 +1,3 @@
-import java.util.Arrays;
 
 public class p22_1 {
     public static int[] findErrorNums(int[] nums) {

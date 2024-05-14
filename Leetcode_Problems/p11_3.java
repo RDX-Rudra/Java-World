@@ -1,4 +1,3 @@
-import java.util.Arrays;
 
 public class p11_3 {
     public static String customSortString(String order, String s) {

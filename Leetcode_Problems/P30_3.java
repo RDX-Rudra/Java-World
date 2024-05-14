@@ -1,4 +1,3 @@
-import java.util.HashMap;
 
 public class P30_3 {
     public static int subarraysWithKDistinct(int[] nums, int K) {

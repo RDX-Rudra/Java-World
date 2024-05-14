@@ -1,3 +1,5 @@
+package generics;
+
 
 public class Animal {
     String name;

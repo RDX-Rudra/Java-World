@@ -1,12 +1,7 @@
-import java.util.Stack;
 
 public class P6_4_1249 {
     
     public static String minRemoveToMakeValid(String s) {
-        // Initialize pointers for the start and end of the string
-        int startPointer = 0;
-        int endPointer = s.length() - 1;
-
         String result;
 
         // Convert input string to character array for easier manipulation

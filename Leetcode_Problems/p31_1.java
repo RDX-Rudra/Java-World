@@ -1,4 +1,3 @@
-import java.util.Stack;
 
 public class p31_1 {
     public static int[] dailyTemperatures(int[] temperatures) {
