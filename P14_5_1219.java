@@ -44,7 +44,6 @@ public class P14_5_1219 {
                 }
             }
         }
-
         return maxGold;
     }
     public static void main(String[] args) {
@@ -52,3 +51,4 @@ public class P14_5_1219 {
         System.out.println(getMaximumGold(grid));
     }
 }
+
