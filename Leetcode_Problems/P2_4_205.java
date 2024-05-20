@@ -28,3 +28,4 @@ public class P2_4_205 {
         System.out.println(isIsomorphic(s, t));
     }
 }
+
