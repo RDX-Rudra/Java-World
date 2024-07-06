@@ -1,3 +1,5 @@
+package GFG_problems;
+
 import java.io.*;
 import java.util.*;
 
@@ -20,7 +22,7 @@ public class p1_17 {
                 arr.add(Integer.parseInt(S[i]));
 
             Solution ob = new Solution();
-            ArrayList<ArrayList<Integer>> res = ob.uniquePerms(arr,n);
+            ArrayList<ArrayList<Integer>> res = Solution.uniquePerms(arr,n);
             for(int i=0; i<res.size(); i++)
             {
                 for(int j=0; j<n; j++)

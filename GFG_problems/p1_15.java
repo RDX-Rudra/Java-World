@@ -1,3 +1,5 @@
+package GFG_problems;
+
 import java.util.Arrays;
 
 public class p1_15 {

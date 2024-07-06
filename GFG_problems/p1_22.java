@@ -1,3 +1,5 @@
+package GFG_problems;
+
 import java.util.*;
 
 class Node {
@@ -13,7 +15,7 @@ class Node {
 }
 
 class Solution {
-    public static ArrayList<ArrayList<Integer>> printPaths(Node root, int sum) {
+    public ArrayList<ArrayList<Integer>> printPaths(Node root, int sum) {
         ArrayList<ArrayList<Integer>> list = new ArrayList<>();
         helper(root, sum, 0, list, new ArrayList<>());
         return list;
