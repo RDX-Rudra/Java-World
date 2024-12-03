@@ -5,9 +5,9 @@ public class Human {
     public String name;
     int salary;
     boolean married;
-    public static long population;
+    public static long population; // this is a part of the class not an object
 
-    public Human(int age, String name, int salary, boolean married){
+    public Human(int age, String name, int salary, boolean married){ // this is a object of human class
         this.age = age;
         this.name = name;
         this.salary = salary;

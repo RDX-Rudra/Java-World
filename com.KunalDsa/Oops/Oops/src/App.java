@@ -32,8 +32,19 @@ public class App {
         System.out.println(amd.name + " " + bmd.name);
         System.out.println(Human.population);
 
+        // greeting();
+
         // static doesnot depends on object it depends on class
         // we cannot use a unstatic object in a static object or instances
+        // we cannot use this keyword inside static method , it only use inside object.
+
+        App obj = new App(); // to run a non static first create an object
+        // we cann't access a non static stuff without referencing their instances in a static context
+        obj.greeting();
+    }
+
+    void greeting(){
+        System.out.println("hi");
     }
 
     /**

@@ -8,7 +8,7 @@ public class Student {
     void greeting(){
         System.out.println("Hello! My name is "+ this.name);
     }
-
+// object is a instant of class
     Student (Student other){
         this.name = other.name;
         this.rno = other.rno;
