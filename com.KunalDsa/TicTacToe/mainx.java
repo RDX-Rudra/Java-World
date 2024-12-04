@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Mainx {
+public class mainx {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Welcome to Tic Tac Toe World!");

@@ -14,6 +14,7 @@ public class MaxItem {
         System.out.print("Enter the end point: ");
         int end = sc.nextInt();
         System.out.println("Max item is "+ maxRange(arr, start, end));
+        sc.close();
     }
 
     private static int maxRange(int[] arr, int start, int end){

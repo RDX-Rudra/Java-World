@@ -5,7 +5,6 @@ public class MxnimunWealthyPerson {
     }
     public static int maximimWealth(int[][] accounts){
         int maxWealthy = Integer.MIN_VALUE;
-        int i=0;
         for(int[] person: accounts){
             int totalAmmount = 0;
             for(int account: person){
@@ -13,7 +12,6 @@ public class MxnimunWealthyPerson {
             }
             if(totalAmmount > maxWealthy){
                 maxWealthy = totalAmmount;
-                i++;
             }
         }
         return maxWealthy;
