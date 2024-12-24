@@ -1,11 +1,12 @@
-import java.util.ArrayList;
+// import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class P7_12_1760 {
     public static int minimumSize(int[] nums, int maxOperations) {
         List<int[]> list1 = Arrays.asList(nums);
-        
+   
+
     }
 
     public static void main(String[] args) {
