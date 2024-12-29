@@ -1,6 +1,4 @@
-package Oops.Oops.lib;
-
-public class message {
+public class Message {
     String mess = "Hello";
     public static void messages(){
         System.out.println("hello Everyone");

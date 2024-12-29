@@ -1,5 +1,3 @@
-package Oops.Oops.lib;
-
 public class Human {
     int age;
     public String name;
@@ -15,3 +13,4 @@ public class Human {
         Human.population += 1;  // also work with this.population
     }
 }
+        

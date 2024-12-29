@@ -1,5 +1,3 @@
-package Oops.Oops.lib;
-
 public class Staticblock {
     static int a=5;
     static int b;
@@ -18,7 +16,7 @@ public class Staticblock {
         System.out.println(obj.b);
 
         Staticblock obj2 = new Staticblock();
-        System.out.println(obj2.a + " " + obj2.b);
+        System.out.println(obj2.a + " " + obj.b);
 
     }
 }
