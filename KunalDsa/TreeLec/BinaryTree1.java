@@ -49,6 +49,7 @@ class BinaryTree1 {
     }
 
     public void display(){
+        System.out.println("Displaying the tree: ");
         display(root, "");
     }
 
