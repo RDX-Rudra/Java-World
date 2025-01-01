@@ -1,5 +1,3 @@
-import java.util.Stack;
-
 public class P12_7_1717 {
     public static int maximumGain(String s, int x, int y) {
         // Ensure "ab" always has higher points than "ba"

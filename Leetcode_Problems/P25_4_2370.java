@@ -1,5 +1,3 @@
-package Leetcode_Problems;
-
 public class P25_4_2370 {
     public static int longestIdealString(String s, int k) {
         int[] dp = new int[27];
