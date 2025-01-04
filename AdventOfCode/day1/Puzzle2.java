@@ -1,4 +1,4 @@
-package AdventOfCode;
+package AdventOfCode.day1;
 
 import java.io.File;
 import java.io.FileNotFoundException;
