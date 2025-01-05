@@ -1,10 +1,10 @@
+package GFG_problems;
 
 //{ Driver Code Starts
 // Initial Template for Java
 
 /*package whatever //do not write package name here */
 
-import java.io.*;
 import java.util.*;
 public class p1_31 {
     public static void main(String[] args) {
@@ -27,6 +27,7 @@ public class p1_31 {
             else
                 System.out.println(0);
         }
+        sc.close();
     }
 
     static final int ALPHABET_SIZE = 26;
