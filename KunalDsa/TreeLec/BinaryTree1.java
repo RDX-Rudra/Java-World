@@ -1,5 +1,3 @@
-package TreeLec;
-
 import java.util.Scanner;
 
 class BinaryTree1 {
