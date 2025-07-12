@@ -1,7 +1,7 @@
 
 import java.util.List;
 
-public class BST {
+public class AVL {
     public class node{
         int data;
         node left;
@@ -19,7 +19,7 @@ public class BST {
 
     private node root;
 
-    public BST(){
+    public AVL(){
 
     }
 
@@ -97,8 +97,51 @@ public class BST {
             node.right = insert(node.right, data);
         }
         node.height = 1 + Math.max(height(node.left), height(node.right));
+        return rotate(node);
+    }
+
+    private node rotate(node node){
+        if(height(node.left) - height(node.right) > 1){
+            if(height(node.left.left) > height(node.left.right)){
+                return rightRotate(node);
+            }
+            if(height(node.left.right) > height(node.left.left)){
+                node.left = leftRotate(node.left);
+                return rightRotate(node);
+            }
+        }
+        if(height(node.right) - height(node.left) > 1){
+            if(height(node.right.right) > height(node.right.left)){
+                return leftRotate(node);
+            }
+            if(height(node.right.left) > height(node.right.right)){
+                node.right = rightRotate(node.right);
+                return leftRotate(node);
+            }
+        }
         return node;
     }
+
+    private node rightRotate(node p){
+        node c = p.left;
+        node t = c.right;
+        c.right = p;
+        p.left = t;
+        p.height = 1 + Math.max(height(p.left), height(p.right));
+        c.height = 1 + Math.max(height(c.left), height(c.right));
+        return c;
+    }
+
+    private node leftRotate(node p){
+        node c = p.right;
+        node t = c.left;
+        c.left = p;
+        p.right = t;
+        p.height = 1 + Math.max(height(p.left), height(p.right));
+        c.height = 1 + Math.max(height(c.left), height(c.right));
+        return c;
+    }
+
 ////// balance check
     public boolean isBalanced(){
         return isBalanced(root);
@@ -134,25 +177,26 @@ public class BST {
     }
 
     public static void main(String[] args) {
-        BST bst = new BST();
+        AVL avl = new AVL();
         // int[] arr = {10, 5, 3, 4, 50, 26, 7};
         // bst.populate(arr);
         int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-        bst.populate(arr);
-        List<Integer> list1 = bst.inorder();
+        avl.populate(arr);
+        List<Integer> list1 = avl.inorder();
         System.out.println("Inorder traversal: ");
         for(int i = 0; i < list1.size(); i++){
             System.out.print(list1.get(i) + " ");
         }
         System.out.println();
-        List<Integer> list2 = bst.postorder();
+        List<Integer> list2 = avl.postorder();
         System.out.println("postorder traversal: ");
         for(int i = 0; i < list1.size(); i++){
             System.out.print(list2.get(i) + " ");
         }
         System.out.println();
         System.out.println("preorder traversal: ");
-        bst.display();
-        System.out.println("tree is balanced: "+bst.isBalanced());
+        avl.display();
+        System.out.println("tree is balanced: "+avl.isBalanced());
     }
 }
+
