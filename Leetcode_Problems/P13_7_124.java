@@ -11,5 +11,5 @@ public class P13_7_124 {
         int right = maxPathFinder(node.right, max);
         max[0] = Math.max(max[0], node.val + left + right);
         return Math.max(node.val, node.val + Math.max(left, right));
-    }
+    } 
 }

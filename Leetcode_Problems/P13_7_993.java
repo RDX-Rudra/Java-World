@@ -1,22 +1,45 @@
-import javax.swing.tree.TreeNode;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class P13_7_993 {
+
     public boolean isCousins(TreeNode root, int x, int y) {
-        TreeNode xf= isCousin(root.left, x, 0, -1, -1);
-        TreeNode yf= isCousin(root.right, y, 0);
-        if(xf == null || yf == null) return false; // if either node is not found
-        return xf == yf;
-    }
+        if (root == null) return false;
 
-    private TreeNode isCousin(TreeNode node, int val, int level, int left, int right) {
-        if(node == null) return null;
-        level++;
-        if(node.right != null || node.left != null) {
-            if(node.right.val == val || node.left.val == val) {
-                return level+1; // found the cousin at this level
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            boolean foundX = false, foundY = false;
+
+            for (int i = 0; i < size; i++) {
+                TreeNode curr = queue.poll();
+
+                if (curr.left != null && curr.right != null) {
+                    if ((curr.left.val == x && curr.right.val == y) ||
+                        (curr.left.val == y && curr.right.val == x)) {
+                        return false; // siblings, not cousins
+                    }
+                }
+
+                if (curr.left != null) {
+                    queue.offer(curr.left);
+                    if (curr.left.val == x) foundX = true;
+                    if (curr.left.val == y) foundY = true;
+                }
+
+                if (curr.right != null) {
+                    queue.offer(curr.right);
+                    if (curr.right.val == x) foundX = true;
+                    if (curr.right.val == y) foundY = true;
+                }
             }
-            
 
-        return -1;
+            if (foundX && foundY) return true; // found both at the same level
+            if (foundX || foundY) return false; // only one found at this level
+        }
+
+        return false;
     }
 }
