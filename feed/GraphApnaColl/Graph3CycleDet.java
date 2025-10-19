@@ -63,6 +63,15 @@ public class Graph3CycleDet {
 
         boolean[] visited = new boolean[v];
         boolean[] recStack = new boolean[v];
-        System.out.println(isCycleDect(graph, visited, 0, recStack));
+        // System.out.println(isCycleDect(graph, visited, 0, recStack));
+
+        for(int i=0; i<v; i++){
+            if(!visited[i]){
+                if(isCycleDect(graph, visited, i, recStack)){
+                    System.out.println("Cycle detected");
+                    return;
+                }
+            }
+        } 
     }
 }
