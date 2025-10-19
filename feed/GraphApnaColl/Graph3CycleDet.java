@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class Graph3CycleDet {
+public class Graph3CycleDet { // Cycle Detection in Directed Graph using DFS
     static class Edge {
         int src;
         int dest;
