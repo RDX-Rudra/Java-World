@@ -1,5 +1,3 @@
-import DPgfg.MaximumPathSum;
-
 public class MaxPathSumTabu {
     public int maximumPath(int[][] mat) {
         int[][] dp = new int[mat.length][mat[0].length];
