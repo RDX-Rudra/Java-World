@@ -1,4 +1,7 @@
+import java.util.Arrays;
+
 public class LongestIncSub {
+    // using recursion + memoization
     private int lisHelper(int[] nums, int p, int c, int[][] dp){
         if(c >= nums.length) return 0;
         int dpP = p + 1; // map -1 -> 0 to avoid negative index
@@ -15,6 +18,23 @@ public class LongestIncSub {
     public int lengthOfLIS(int[] nums) {
         int[][] dp = new int[nums.length + 1][nums.length];
         return lisHelper(nums, -1, 0, dp);
+    }
+
+    // using tabulation
+    public int lengthOfLISTabulation(int[] nums) {
+        int n = nums.length;
+        int[] dp = new int[n];
+        Arrays.fill(dp, 1);
+        int maxLen = 1;
+        for(int i = 1; i < n; i++){
+            for(int j = 0; j < i; j++){
+                if(nums[i] > nums[j]){
+                    dp[i] = Math.max(dp[i], dp[j] + 1);
+                }
+            }
+            maxLen = Math.max(maxLen, dp[i]);
+        }
+        return maxLen;
     }
 
     public static void main(String[] args) {
