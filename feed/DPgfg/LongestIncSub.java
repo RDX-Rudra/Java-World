@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class LongestIncSub {
@@ -37,6 +38,27 @@ public class LongestIncSub {
         return maxLen;
     }
 
+    // using binary search
+    public int lengthOfLISBinarySearch(int[] nums) {
+        ArrayList<Integer> ans = new ArrayList<>();
+        for(int x : nums){
+            if(ans.size()== 0 || x > ans.get(ans.size()-1)){
+                ans.add(x);
+            }
+            else replace(ans, x);
+        }   
+        return ans.size();  
+    }   
+
+    private void replace(ArrayList<Integer> ans, int x){
+        int l = 0, r = ans.size()-1;
+        while(l < r){
+            int mid = l + (r-l)/2;
+            if(ans.get(mid) >= x) r = mid;
+            else l = mid + 1;
+        }
+        ans.set(r, x);
+    }
     public static void main(String[] args) {
         LongestIncSub obj = new LongestIncSub();
         int[] nums = {10,9,2,5,3,7,101,18};
