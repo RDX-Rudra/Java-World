@@ -47,6 +47,22 @@ public class CoinChange{
         return dp[i][amount] = Math.min(skip, pick);
     }
 
+    // coiin change problem using 1D dp
+    public int coinChange1D(int[] coins, int amount) {
+        int[] dp = new int[amount + 1];
+        java.util.Arrays.fill(dp, Integer.MAX_VALUE);
+        dp[0] = 0;
+
+        for (int coin : coins) {
+            for (int j = coin; j <= amount; j++) {
+                if (dp[j - coin] != Integer.MAX_VALUE) {
+                    dp[j] = Math.min(dp[j], 1 + dp[j - coin]);
+                }
+            }
+        }
+
+        return dp[amount] == Integer.MAX_VALUE ? -1 : dp[amount];
+    }
     public static void main(String[] args) {
         CoinChange obj = new CoinChange();
         int[] coins = {1, 2, 5};
